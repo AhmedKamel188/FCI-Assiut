@@ -6,11 +6,7 @@ public class Main {
         System.out.print("Enter size of array : ");
         int size = new Scanner(System.in).nextInt();
         // receive values from user
-        int[] nums = new int[size];
-        for(int i = 0; i < size; i++){
-            System.out.print("Enter element number " + (i+1) + " : ");
-            nums[i] = new Scanner(System.in).nextInt();
-        }
+        int[] nums = getArray(size);
         // invoke method and print output
         sortArray(nums);
         for(int i : nums)
@@ -25,6 +21,15 @@ public class Main {
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
+    }
+
+    public static int[] getArray(int size){
+        int[] nums = new int[size];
+        for(int i = 0; i < size; i++){
+            System.out.print("Enter element number " + (i+1) + " : ");
+            nums[i] = new Scanner(System.in).nextInt();
+        }
+        return nums;
     }
 }
 /*
